@@ -20,8 +20,6 @@ To have multiple colimns in a text we need to could use multicols tag. Code is d
 \begin{multicols}{2}
 \end{multicols}
 ```
-
-
 ### Page and Margin
 Documents can be both single column and multicolumn. Also, sometimes, we need to specify the margin size. These can be done with ```geometry``` package of latex. 
 
@@ -31,6 +29,18 @@ To set the paper's size and margin size, we can use the following command:
 a4paper, % for specifying the size
 total = {8 in, 6 in} %for specifying the page margin
 ]{geometry}
+```
+### Horizontal Line
+To add horizontal line we could use ```\hline``` tag
+
+### Vertical and Horizontal Spacing
+We often need vartical and horizontal spacing in a page. For vertical spacing we will get free space between the lines of the specified length. Horizontal spacing will provide us with the same operation like ```\vspace``` but in a *horizontal* way. Code is demontrated below:
+``` latex
+\begin{document}
+We are writing \latex code.\\
+\vspace{0.2 in} % vertical space between these two lines
+A space between them
+\end{document}
 ```
 
 # Paper Formats
