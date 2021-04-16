@@ -7,6 +7,7 @@ Although latex needs to be installed on host machine, we can use different onlin
 - *Overleaf Teamplates* : ```https://www.overleaf.com/latex/templates```
 - *Overleaf Documentation* : ```https://www.overleaf.com/learn```
 - *Table Generator* : ```https://www.tablesgenerator.com/```
+- *List of Mathematical Symbols* : ```https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols```
 
 # Conventions while writing paper
 - Always reference the tables or images using ```\ref{label}``` tag
