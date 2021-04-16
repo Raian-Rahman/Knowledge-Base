@@ -21,6 +21,7 @@ Although latex needs to be installed on host machine, we can use different onlin
 - To show multiplication sign, use ```\times``` to show the multiplication sign in an equation
 - Use $0.00002$ to show the number in a paper. Don't use it as plain text
 - Always put table or figures at the top or bottom of the page. Putting image in between will cause waste of space
+- Dont add ```\cite``` individually. Rather use comma between the ids of the bibtext to add multiple reference for a single citation. i.e: ```\cite{id1,id2,id3}```
 
 
 # Basic Tags
@@ -134,6 +135,26 @@ g & h & i
 - natural logarithmn: ```\ln(x)```
 - summation: ```\sum_{initial_value}{ceiling value}equation```
 - Integration: ```\int_{initial_value}{ceiling value}equation```
+
+### Adding Citation to a paper
+First create a newfile named ```file_name.bib``` and add all the bibtexts into that file one by one. To create citation, we need ```biblatex``` user package. Then at the beginning of the document, we need to define the source of bibtext and for each reference use ```\cite``` tag. At the end of the document add ```\printbibliography``` to add the references altogether. A demonstration is given below:
+``` latex
+\usepackage[
+backend=biber,
+style=numeric,
+citestyle=numeric
+]{biblatex}
+\addbibresource{bibtext.bib}
+
+\begin{document}
+whatever i write\cite{my_life}, I add citations\cite{whydoicite, dontknow}
+
+\medskip
+\printbibliography
+\end{document}
+
+```
+
 # Paper Formats
 There are different kind of paper templates available. The most common ones are:
 - Springer format
