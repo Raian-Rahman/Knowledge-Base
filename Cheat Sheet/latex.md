@@ -12,6 +12,17 @@ Although latex needs to be installed on host machine, we can use different onlin
 There are some basic operaion in latex. Some of the important tasks are given below:
 
 ## Document Formatting
+### Specifying Multiple Columns
+To have multiple colimns in a text we need to could use multicols tag. Code is demonstrated below:
+``` latex
+\usepackage{multicols}
+
+\begin{multicols}{2}
+\end{multicols}
+```
+
+
+### Page and Margin
 Documents can be both single column and multicolumn. Also, sometimes, we need to specify the margin size. These can be done with ```geometry``` package of latex. 
 
 To set the paper's size and margin size, we can use the following command:
@@ -27,7 +38,3 @@ There are different kind of paper templates available. The most common ones are:
 - Springer format
 - IEEE format
 Tags can be different based on the format. Different tags are given below:
-
-
-
-## Springer Format
