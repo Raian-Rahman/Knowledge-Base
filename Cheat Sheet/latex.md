@@ -42,7 +42,19 @@ We are writing \latex code.\\
 A space between them
 \end{document}
 ```
-
+### Including Images in paper
+**[A Rule of thumb while writing a paper is always put images in the top or bottom of the page]**
+Images can be included using ```graphicx``` package. An example of including images in a document is given below:
+``` latex
+\usepackage{graphics}
+\begin{figure}[t] %specifying where to put the image
+     \centering % to make the image center aligned
+     \includegraphics[width = \textwidth]{Paper Pipeline.png}  %\textwidth is used to specify the width of a page,
+     \caption{write a caption}  % it is used to add caption in an image. Put caption before include graphics to 
+                                % add captions over the image 
+     \label{steady_state}       % add a label to reference the image
+\end{figure}
+```
 # Paper Formats
 There are different kind of paper templates available. The most common ones are:
 - Springer format
