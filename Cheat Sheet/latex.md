@@ -8,6 +8,18 @@ Although latex needs to be installed on host machine, we can use different onlin
 - *Overleaf Documentation* : ```https://www.overleaf.com/learn```
 - *Table Generator* : ```https://www.tablesgenerator.com/```
 
+# Conventions while writing paper
+- Always reference the tables or images using ```\ref{label}``` tag
+- Never use ``$eqn$`` sign to write equation. Use 
+    ``` latex
+    \begin{align}
+        (a+b)^2 = a^2 + 2ab + b^2
+    \end{align}
+    ```
+- If citation of a website is not found, add the link to the website in the footnote
+- Don't add too much details on a caption of table. But, we can explain an image in the caption
+
+
 # Basic Tags
 There are some basic operaion in latex. Some of the important tasks are given below:
 
@@ -44,6 +56,7 @@ A space between them
 ```
 ### Including Images in paper
 **[A Rule of thumb while writing a paper is always put images in the top or bottom of the page]**
+
 Images can be included using ```graphicx``` package. An example of including images in a document is given below:
 ``` latex
 \usepackage{graphics}
@@ -53,6 +66,23 @@ Images can be included using ```graphicx``` package. An example of including ima
      \caption{write a caption}  % it is used to add caption in an image. Put caption before include graphics to 
                                 % add captions over the image 
      \label{steady_state}       % add a label to reference the image
+\end{figure}
+```
+### Including Multiple Images as a single image
+Multiple images can be included using ```subfloat``` package. An example of including images in a document is given below:
+``` latex
+\usepackage{subfloat}
+\usepackage{graphics}
+
+\begin{figure}
+     \centering
+     \subfloat[][caption for particular image]{\includegraphics[width = 1.5 in]{mislabel_0.png}\label{<figure0>}}
+     \hspace{.05 in} %hspace is added to add horizontal space between the images
+     \subfloat[][caption for particular image]{\includegraphics[width = 1.5 in]{mislabel_1.png}\label{<figure1>}}
+     \hspace{.05 in} %hspace is added to add horizontal space between the images
+     \subfloat[][caption for particular image]{\includegraphics[width = 1.5 in]{mislabel_2.png}\label{<figure2>}}
+     \caption{add captions}
+     \label{mislabeled}
 \end{figure}
 ```
 # Paper Formats
