@@ -18,6 +18,9 @@ Although latex needs to be installed on host machine, we can use different onlin
     ```
 - If citation of a website is not found, add the link to the website in the footnote
 - Don't add too much details on a caption of table. But, we can explain an image in the caption
+- To show multiplication sign, use ```\times``` to show the multiplication sign in an equation
+- Use $0.00002$ to show the number in a paper. Don't use it as plain text
+- Always put table or figures at the top or bottom of the page. Putting image in between will cause waste of space
 
 
 # Basic Tags
@@ -69,9 +72,9 @@ Images can be included using ```graphicx``` package. An example of including ima
 \end{figure}
 ```
 ### Including Multiple Images as a single image
-Multiple images can be included using ```subfloat``` package. An example of including images in a document is given below:
+Multiple images can be included using ```subfig``` package. An example of including images in a document is given below:
 ``` latex
-\usepackage{subfloat}
+\usepackage{subfig}
 \usepackage{graphics}
 
 \begin{figure}
@@ -84,6 +87,28 @@ Multiple images can be included using ```subfloat``` package. An example of incl
      \caption{add captions}
      \label{mislabeled}
 \end{figure}
+```
+
+### Designing Table in a paper
+Tables can easily be designed using Graphical User Interface with ```https://www.tablesgenerator.com/```. After developing the table, we could add those into document by generating a latex code and paste it into the document. **No demonstration is given here**
+
+To fix the width of a table we could use ```\resizebox``` package. 
+
+A demonstration is given below:
+``` latex
+\usepackage{graphicx}
+\begin{table}[]
+\centering
+\caption{whatever caption you want}
+\label{tab:my-table}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lll}
+a & b & c \\
+d & e & f \\
+g & h & i
+\end{tabular}
+}
+\end{table}
 ```
 # Paper Formats
 There are different kind of paper templates available. The most common ones are:
