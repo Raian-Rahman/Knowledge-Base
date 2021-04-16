@@ -110,6 +110,30 @@ g & h & i
 }
 \end{table}
 ```
+### General Mathematics
+- addition: ```+```
+- subtraction: ```-```
+- plus or minus: ```\pm```
+- multiplication (times): ```\times```
+- multiplication (dot): ```\cdot```
+- division (symbol): ```\div```
+- division (slash): ```/```
+- equal: ```=```
+- not equal: ```\ne```
+- less than: ```<```
+- greater than: ```>```
+- less than or equal to: ```\le```
+- greater than or equal to: ```\ge```
+- fraction: ```\frac{numerator}{denominator}```
+- square root: ```\sqrt{x}```
+- *n_th* root: ```\sqrt[n]{x}```
+- exponentiation (superscript): ```a^b```
+- subscript: ```a_b```
+- absolute value: ```|x|```
+- logarithmn: ```\log_{a}b```
+- natural logarithmn: ```\ln(x)```
+- summation: ```\sum_{initial_value}{ceiling value}equation```
+- Integration: ```\int_{initial_value}{ceiling value}equation```
 # Paper Formats
 There are different kind of paper templates available. The most common ones are:
 - Springer format
