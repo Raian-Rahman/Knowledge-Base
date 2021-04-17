@@ -104,7 +104,11 @@ print(train_data[0].___dict___.values())    #to get the values
 ## Build a vocabulary
 
 ``` python
-quote.build_vocab(train_data, max_size = 10000, min_freq=1)
+quote.build_vocab(
+      train_data, max_size = 10000, 
+      min_freq=1, 
+      vectors = 'glove.6B.100d' #1 gb download
+)
 ```
 
 
