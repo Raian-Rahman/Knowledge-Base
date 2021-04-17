@@ -42,6 +42,17 @@ For tokenization a very simple way is to use ```split()``` function. But it is n
 tokenize = lambda x: x.split()
 ```
 
+But, it is not a good practice to use this tokenization technique because it often fails to provide a very good output. A better way is to use spacy tokenizer. It is demonstrated below:
+``` python
+import spacy
+!python -m spacy download en
+spacy_en = spacy.load('en')
+
+def tokenize(text):
+    return [tok.text for tok in spacy_en.tokenizer(text)]
+```
+
+
 ## Creating fields
 To create a field, we have several parameters. 
 some important parameters are:
