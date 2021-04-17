@@ -54,8 +54,62 @@ some important parameters are:
 
 An example is given below:
 ``` python
+"""
+here we specify how the data should be preprocessed
+"""
+#here quote is a sequential data
+quote = Field(sequential = True, use_vocab = True, tokenize = tokenize, lower = True)
 
+#score is nor a sequential data
+score = Field(sequential = False, use_vocab = False)
+
+#now we contruct a field that will be a dictionary
+#it spacify which columns to use in the dataset
+fields = {
+    'quote' : ('q', quote), #defines how this column is going to be preprocessed using quote field
+    'score': ('s', score)   #defines how this column is going to be preprocessed using quote field
+}
+
+#to access score, we could use
+batch.s
 ```
+
+## Load Dataset
+For dataset we use TabularDataset. A demonstration is given below:
+``` python
+train_data, test_data = TabularDataset.splits(
+                                    path = 'path_to_file',
+                                    train = 'train.json',
+                                    test = 'test.json',
+                                    # for validation add, validation = 'validation.json'
+                                    format = 'json',
+                                    fileds = fields
+                                )
+
+print(train_data[0].___dict___.keys())      #to get the keys
+print(train_data[0].___dict___.values())    #to get the values
+```
+
+## Build a vocabulary
+
+``` python
+quote.build_vocab(train_data, max_size = 10000, min_freq=1)
+```
+
+
+## Construct the iterator
+``` python
+"""
+it will do the padding for us
+"""
+train_iterator, test_iterator = BucketIterator.splits(
+    (train_data,test_data),
+    batch_size = 2,
+    device = "cuda"
+)
+```
+
+
 
 
 
