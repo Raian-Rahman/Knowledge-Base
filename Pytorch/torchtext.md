@@ -125,6 +125,7 @@ train_iterator, test_iterator = BucketIterator.splits(
 ```
 
 ### Use of Builtin Dataset in torchtext
+Here, we demonstrate the use of Multi30K dataset for machine translation. It could help us working with it. 
 ``` python
 import spacy
 import torchtext.datasets import Multi30k
@@ -151,6 +152,16 @@ for batch in train_iterator:
     print(batch)
 ```
 
+### Getting string to vocabulary and vice versa
+During training we are giving the string as input and model takes the vocabulary as the return. But, during inference we generally get vocab as output and we need to generate the string. We could use ```stoi``` and ```itos``` for this. A demonstration is given below:
+``` python
+english.vocab.stoi['value']
+#-> random_number
+
+#to input value as input to text we get 
+english.vocab.itos[45]
+#-> we get the string
+```
 
 
 
