@@ -124,8 +124,32 @@ train_iterator, test_iterator = BucketIterator.splits(
 )
 ```
 
+### Use of Builtin Dataset in torchtext
+``` python
+import spacy
+import torchtext.datasets import Multi30k
+from torchtext.data import Field,BucketIterator
 
+spacy_eng = spacy.load('en')
+spacy_ger = spacy.load('de')
 
+train_data, validation_data, test_data = Multi30K.splits(
+    exts = ('.de','.en'),
+    fields = (german, englsih)
+)
+
+english.build_vocab(train_data, max_size=10000, min_freq=2)
+german.build_vocab(train_data, max_size=10000, min_freq=2)
+
+train_iter, val_iter, test_iter = BucketIterator.splits(
+    (train_data, validation_data, test_data),
+    batch_size = 64,
+    device='cuda'
+)
+
+for batch in train_iterator:
+    print(batch)
+```
 
 
 
