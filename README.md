@@ -6,7 +6,9 @@ Forlder are described below:
 ## Cheat Sheet
 In this folder, various cheat sheets are being compiled. These are the cheat sheets that we often needs to maintain. The cheat sheet contains cheats for latex commands, python commands etc.
 
+## Resource List
 
+In the resource list file, a lot of useful resources to learn different topics of machine learning is given. I would like to thank all the contributor of these contents for making deep learning so easy. 
 
 ## Contributor
 Raian Rahman <br>
